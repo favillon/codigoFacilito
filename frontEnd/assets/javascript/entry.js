@@ -1,2 +1,2 @@
 import '../css/app.scss';
-import '../javascript/slider/slider';
+import '../javascript/slider/sliderDOM';

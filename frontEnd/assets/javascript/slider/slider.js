@@ -16,48 +16,30 @@ export default class Slider {
 
     play()
     {
-        console.log("ingreso play");
-        console.log( this.intervalSlider);
-        console.log(this.speed);
-        
-        /*this.intervalSlider = setInterval(() => {
-            console.log("tiempo")
+        this.intervalSlider = setInterval(() => {
             this.next();
-        }, this.speed);*/
-        
-        //var that = this;
-        this.intervalSlider = setInterval(function(){            
-            this.next();
-        },this.speed);
+        }, this.speed);
     }
 
     next()
     {
-        console.log("ingreso next");
         this.index++;
         if (this.index >= this.size) {
             this.index = 0;
         }
-        console.log(this.element[this.index]);
+        this.animationFunc(this.element[this.index]);
     }
 
     prev()
-    {
-        console.log("ingreso prev");
+    {  
         this.index--;
         if (this.index < 0 ) {
             this.index = this.size - 1;
         }
-        console.log(this.element[this.index]);
+        this.animationFunc(this.element[this.index]);
     }
 
     stop(){
         clearInterval(this.intervalSlider);
     }
 }
-
-let slider = new Slider({
-    element: ['aa', 'bbb', 'ccc', 'ddd', 'eee'],    
-    speed: 2000
-});
-slider.play();
