@@ -115,6 +115,61 @@ figure{
         }
     }
 }
+
+
+.slider{    
+    .main-text{
+        margin-top: 60px;
+        transform: translatey(100px);
+    }
+    .main-image{
+        z-index: -5;
+    }
+    header{
+        margin : 0 auto;
+        background-color: $blue;
+        color: $white;
+        padding: $bigPadding;
+        box-sizing: border-box;
+        width: 98%;
+        min-height: 350px;
+        h2{
+            margin: 0px;            
+        }
+        .slider-text{
+            transition: all 0.6s ease-out;
+            &.hide{
+                opacity: 0;
+                transform: translateX(40px);
+            }
+        }
+        
+    }
+    img {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        transition: all 0.6s ease-out;
+        &.hide{
+            opacity: 0;
+        }
+    }
+    .separator{
+        text-align: right;
+        padding-right: 150px ;
+        position: relative;
+        color: $white;
+        &::after{
+            position: absolute;
+            content: '';
+            height: 3px;
+            width: 140px;
+            background-color: currentColor;
+            top:0.7em;
+            right: 0px;            
+        }
+    }
+}
 //section 3
 .mission{
     align-items: center;
@@ -179,6 +234,14 @@ figure{
         display: grid;
         grid-template-columns: repeat(8,1fr);
         grid-template-areas: "mission-text mission-text mission-text mission-image mission-image mission-image mission-image mission-image";
+    }
+    .slider{
+        align-items:center;
+        width: 100%;
+        .main-text{
+            margin-top: 4em;
+            transform: translateX(60px);
+        }
     }
     .social{
         a{
